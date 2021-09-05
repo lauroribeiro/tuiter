@@ -14,7 +14,7 @@ class TuitesController < ApplicationController
 
   # GET /tuites/new
   def new
-    @tuite = Tuite.new
+    @tuite = current_user.tuites.build
   end
 
   # GET /tuites/1/edit
@@ -23,7 +23,7 @@ class TuitesController < ApplicationController
 
   # POST /tuites or /tuites.json
   def create
-    @tuite = Tuite.new(tuite_params)
+    @tuite = current_user.tuites.build(tuite_params)
 
     respond_to do |format|
       if @tuite.save
