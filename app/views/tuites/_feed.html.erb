@@ -26,7 +26,7 @@
 						<small><%= "@#{tuite.user.username}" %></small>
 						<p><%= tuite.tuite %></p>
 					</div>
-					<% if user_signed_in? %>
+					<% if user_signed_in? && current_user.id == tuite.user_id%>
 						<nav class="level">	
 							<div class="level-left is-mobile">
 								<%= link_to tuite, class: "level-item" do %>

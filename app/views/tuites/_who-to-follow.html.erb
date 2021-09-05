@@ -2,55 +2,24 @@
   <nav class="panel">
     <p class="panel-heading">Quem seguir</p>
   </nav>
-  <div class="panel-block">
-    <article class="media">
-      <div class="media-left">
-        <figure class="image is-32x32">
-          <img src="https://bulma.io/images/placeholders/64x64.png">
-        </figure>
+  <% User.limit(5).each do |user| %>
+    <% unless current_user == user %>
+      <div class="panel-block">
+        <article class="media">
+          <div class="media-left">
+            <figure class="image is-32x32">
+              <%= gravatar_image_tag(user.email, size: 64, alt: user.name) %>
+            </figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong><%= user.name %></strong><br>
+                <small><%= "@#{user.username}"%></small>
+              </p>
+            </div>
+          </div>
+        </article>
       </div>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>Lauro Ribeiro</strong>
-            <small>@lauroribeiro</small>
-          </p>
-        </div>
-      </div>
-    </article>
-  </div>
-  <div class="panel-block">
-    <article class="media">
-      <div class="media-left">
-        <figure class="image is-32x32">
-          <img src="https://bulma.io/images/placeholders/64x64.png">
-        </figure>
-      </div>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>Lauro Ribeiro</strong>
-            <small>@lauroribeiro</small>
-          </p>
-        </div>
-      </div>
-    </article>
-  </div>
-  <div class="panel-block">
-    <article class="media">
-      <div class="media-left">
-        <figure class="image is-32x32">
-          <img src="https://bulma.io/images/placeholders/64x64.png">
-        </figure>
-      </div>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>Lauro Ribeiro</strong>
-            <small>@lauroribeiro</small>
-          </p>
-        </div>
-      </div>
-    </article>
-  </div>
-</div>
+    <% end %>
+  <% end %>
