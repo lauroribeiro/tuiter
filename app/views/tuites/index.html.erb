@@ -9,17 +9,17 @@
 </section>
 
   <tbody>
-    <% @tuites.each do |tuite| %>
+    <%# @tuites.each do |tuite| %>
       <tr>
-        <td><%= tuite.tuite %></td>
-        <td><%= link_to 'Show', tuite %></td>
-        <td><%= link_to 'Edit', edit_tuite_path(tuite) %></td>
-        <td><%= link_to 'Destroy', tuite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= tuite.tuite %></td>
+        <td><%#= link_to 'Show', tuite %></td>
+        <td><%#= link_to 'Edit', edit_tuite_path(tuite) %></td>
+        <td><%#= link_to 'Destroy', tuite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <%# end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Tuite', new_tuite_path %>
+<%#= link_to 'New Tuite', new_tuite_path %>
