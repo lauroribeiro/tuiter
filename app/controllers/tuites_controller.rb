@@ -26,7 +26,7 @@ class TuitesController < ApplicationController
 
     respond_to do |format|
       if @tuite.save
-        format.html { redirect_to @tuite, notice: "Tuite was successfully created." }
+        format.html { redirect_to root_path, notice: "Tuite was successfully created." }
         format.json { render :show, status: :created, location: @tuite }
       else
         format.html { render :new, status: :unprocessable_entity }
