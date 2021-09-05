@@ -3,7 +3,8 @@ class TuitesController < ApplicationController
 
   # GET /tuites or /tuites.json
   def index
-    @tuites = Tuite.all
+    @tuites = Tuite.all.order("created_at DESC")
+    @tuite = Tuite.new
   end
 
   # GET /tuites/1 or /tuites/1.json
