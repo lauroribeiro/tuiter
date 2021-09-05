@@ -1,5 +1,6 @@
 class TuitesController < ApplicationController
   before_action :set_tuite, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /tuites or /tuites.json
   def index
