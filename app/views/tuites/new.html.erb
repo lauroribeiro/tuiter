@@ -1,5 +1,11 @@
-<h1>New Tuite</h1>
+div class="section">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-half">
+				<h1 class="title">Escreva um novo Tuite</h1>
+					<%= render 'form', tuite: @tuite %>
+			</div>
+		</div>
+	</div>
+</div>
 
-<%= render 'form', tuite: @tuite %>
-
-<%= link_to 'Back', tuites_path %>
