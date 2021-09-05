@@ -1,0 +1,22 @@
+<%= form_with(model: tuite) do |form| %>
+  <% if tuite.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tuite.errors.count, "error") %> prohibited this tuite from being saved:</h2>
+
+      <ul>
+        <% tuite.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tuite %>
+    <%= form.text_area :tuite %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
